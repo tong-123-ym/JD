@@ -32,4 +32,7 @@ public class test  {
         SqlSessionUtil.close(sqlSession);
 
     }
+    public  void testll(){
+        System.out.println("jfj");
+    }
 }
