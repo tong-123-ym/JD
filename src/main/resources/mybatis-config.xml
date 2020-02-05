@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- mybatis主配置文件-->
+<configuration><typeAliases>
+    <typeAlias type="com.newer.domain.Rooms" alias="Rooms"></typeAlias>
+    <typeAlias type="com.newer.domain.Checkins" alias="Checkins"></typeAlias>
+</typeAliases>
+	<environments default="env1">
+        <environment id="env1">
+            <!-- 事务管理方式-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- 数据原配置:POOLED 使用mybatis内置简易连接池-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"></property>
+                                                                               <!--数据库名称-->
+                <property name="url" value="jdbc:mysql://localhost:3306/sys?serverTimezone=Asia/Shanghai&amp;characterEncoding=UTF-8&amp;useSSL=false"></property>
+            <property name="username" value="root"></property>
+                <property name="password" value="qwer1234"></property>
+
+            </dataSource>
+        </environment>
+    </environments>
+    <!--定义所有映射器接口实现方法-->
+<mappers>
+    <mapper class="com.newer.mapper.RoomsMapper"></mapper>
+    <mapper class="com.newer.mapper.CheckinsMapper"></mapper>
+
+</mappers>
+</configuration>
